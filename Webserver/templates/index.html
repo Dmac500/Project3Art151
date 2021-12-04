@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="../static/style.css"> 
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>        
+<title>Home</title>
+
+</head>
+<script>
+    
+    $(function(){
+            window.setInterval(function(){
+                loadNewDecimal()
+            }, 3000)
+        
+            
+  
+        
+        function loadNewDecimal(){
+            $.ajax({
+                url:"/testcall",
+                type:"POST",
+                dataType:"json",
+               success: function(data){
+                   $(rand_num).replaceWith(data)
+               }
+            });
+        }
+        });
+  
+  
+    </script>
+    <style>
+body
+{
+  background-color: blue;
+  color: white;
+}
+h1
+{
+  text-align: center;
+}
+
+    </style>
+<body>
+    
+    
+  <h1>Match Making</h1>
+
+  <h3 id=rand_num>
+    Fighter: 
+  <BR> <BR>
+    Win / Loss:  
+    <BR> <BR>
+    <BR> <BR>
+
+    Fighter: 
+    <BR> <BR>
+      Win / Loss:
+   </h3>
+
+     
+    
+</body>

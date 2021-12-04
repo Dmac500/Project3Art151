@@ -1,0 +1,65 @@
+
+<style>
+ .grid 
+  {
+    display: grid; 
+    grid-template-columns: auto auto;
+  }
+</style>
+<div class = grid>
+<div id=rand_num>
+  Fighter: {{ fighter1['FirstName'] }} {{fighter1['LastName']}} ({{fighter1['Nickname']}})
+  <BR> <BR>
+  WeightClass: {{fighter1['WeightClass']}}
+    <BR> <BR>
+    Win / Loss: {{fighter1['wins']}} / {{fighter1['Losses']}}             
+    <BR> <BR> 
+      Reach: {{fighter1['Reach']}}
+      <BR> <BR> 
+        StrikeAccuracy: {{fighter1['strkper']}}
+        <BR>
+        SigStrikesLandedPerMinute: {{fighter1['SigStrikesLandedPerMinute1']}}
+        <BR>
+        TakedownAverage:{{fighter1['TakedownAverage']}}
+      <BR> <BR> 
+         
+      TKO's: {{fighter1['TechnicalKnockouts']}}
+      <BR> 
+      Subs : {{fighter1['Submissions']}}
+      <BR> <BR> 
+        TitleWins: {{fighter1['TitleWins']}}
+        <BR> 
+        TitleLosses:{{fighter1['TitleLosses']}}
+      <BR> <BR> 
+      win percentage: {{fighter1['winper']}}
+      <BR> <BR> <BR> <BR>
+
+     
+      </div>
+    
+<div id=rand_num1>
+  Fighter: {{fighter2['FirstName1']}} {{fighter2['LastName1']}} ({{fighter2['Nickname1']}})
+  <BR> <BR>
+    WeightClass: {{fighter2['WeightClass1']}}
+<BR> <BR>
+Win / Loss: {{fighter2['wins1']}} / {{fighter2['Losses1']}}
+<BR> <BR> 
+  Reach: {{fighter2['Reach1']}}
+  <BR> <BR> 
+  StrikeAccuracy: {{fighter2['strkper1']}} 
+  <BR>
+  SigStrikesLandedPerMinute: {{fighter2['SigStrikesLandedPerMinute1']}}
+  <BR>
+  TakedownAverage:{{fighter2['TakedownAverage1']}}
+  <BR> <BR> 
+  TKO's: {{fighter2['TechnicalKnockouts1']}}
+  <BR> 
+  Subs : {{fighter2['Submissions1']}}
+  <BR> <BR> 
+    TitleWins: {{fighter2['TitleWins1']}}
+    <BR> 
+    TitleLosses:{{fighter2['TitleLosses1']}}
+<BR> <BR>
+  win percentage: {{fighter2['winper1']}}
+</div>
+</div>
