@@ -25,8 +25,9 @@
                 type:"POST",
                 dataType:"json",
                success: function(data){
-                $(title).replaceWith(data.title)
-                $(weight).replaceWith(data.Weight1)
+                $(fighter1).replaceWith(data.title)
+                $(weight1).replaceWith(data.weight1)
+                $(wlr).replaceWith(data.WLR)
                   
                }
             });
@@ -40,7 +41,8 @@
     
     
   <h1 id=fighter1>{{title}}</h1>
-  <h2 id=weight>{{Weight1}}</h2>
+  <h2 id=weight1>{{weight1}}</h2>
+  <h2 id=wlr>{{WRL}}</h2>
 
   
    
