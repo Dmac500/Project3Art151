@@ -14,18 +14,20 @@
     $(function(){
             window.setInterval(function(){
                 loadNewDecimal()
-            }, 3000)
+            }, 5000)
         
             
   
         
         function loadNewDecimal(){
             $.ajax({
-                url:"/testcall",
+                url:"/imgandtitle",
                 type:"POST",
                 dataType:"json",
                success: function(data){
-                   $(rand_num).replaceWith(data)
+                $(title).replaceWith(data.title)
+                $(weight).replaceWith(data.Weight1)
+                  
                }
             });
         }
@@ -33,34 +35,15 @@
   
   
     </script>
-    <style>
-body
-{
-  background-color: blue;
-  color: white;
-}
-h1
-{
-  text-align: center;
-}
 
-    </style>
 <body>
     
     
-  <h1>Match Making</h1>
+  <h1 id=fighter1>{{title}}</h1>
+  <h2 id=weight>{{Weight1}}</h2>
 
-  <h3 id=rand_num>
-    Fighter: 
-  <BR> <BR>
-    Win / Loss:  
-    <BR> <BR>
-    <BR> <BR>
-
-    Fighter: 
-    <BR> <BR>
-      Win / Loss:
-   </h3>
+  
+   
 
      
     
