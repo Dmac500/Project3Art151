@@ -4,6 +4,7 @@ import requests
 import RPi.GPIO as GPIO
 from random import randint
 import time
+from datetime import date
 
 #Libraries
 import RPi.GPIO as GPIO
@@ -60,45 +61,98 @@ url = f"https://api.sportsdata.io/v3/mma/scores/json/Fighters?key={key}"
 rec = requests.get(url).json()
 
 
-      
+def getAge(x):
+    t = x
+    year = t.split('T')
+    year = str(year[0])
+    bday = year.split("-")
+    today = date.today()
+    age = today.year - int(bday[0]) - ((today.month, today.day) < (int(bday[1]), int(bday[2])))
+    return age
+    
+    
+
 
 
 @app.route('/imgandtitle', methods=['GET', 'POST'])
 def helloworld():
 
-    if distance() < 10 and distance() > 0:
+    if distance() < 15 and distance() > 0:
          Fighter.clear()
         
          for i in range(len(rec)): 
           if rec[i]["WeightClass"] == 'Featherweight':
             Fighter.append(rec[i])
+    elif distance() < 30 and distance() > 15:
+        Fighter.clear()
+      
+        for i in range(len(rec)):
+            if rec[i]["WeightClass"] == 'Lightweight':
+                Fighter.append(rec[i])
+    elif distance() > 30 and distance() < 45:
+        Fighter.clear()
+
+        for i in range(len(rec)):
+         if rec[i]["WeightClass"] == 'Welterweight':
+            Fighter.append(rec[i])
+    elif distance() > 45 and distance() < 60:
+        Fighter.clear()
+        for i in range(len(rec)):
+         if rec[i]["WeightClass"] == 'Middleweight':
+            Fighter.append(rec[i])
+    elif distance() > 75 and distance() < 90:
+        Fighter.clear()
+        for i in range(len(rec)):
+         if rec[i]["WeightClass"] == 'Heavyweight':
+            Fighter.append(rec[i])
     else:
         Fighter.clear()
         
         for i in range(len(rec)): 
-          if rec[i]["WeightClass"] == 'Lightweight':
+          if rec[i]["WeightClass"] == 'Bantamweight':
             Fighter.append(rec[i])
 
             
     test = Fighter[np.random.randint(0,high=len(Fighter)-1)]
     test2 = Fighter[np.random.randint(0,high=len(Fighter)-1)]
-
+    F1age = getAge(test['BirthDate'])
+    F2age = getAge(test2['BirthDate'])
     #random photo url could 
     # base_url = f'https://picsum.photos/{17}'
        
     #Since we are replacing an attribute all we need to do is get the new url as a string.
     # url = base_url
     #use full h2 tag since you're replacing the html object with a new one
-    title = f'<h1 id=fighter1 >{test["FirstName"]} {test["LastName"]} ({test["Nickname"]}) </h1>'
-    weight1= f'<h2 id=weight1 >{test["WeightClass"]}</h2>'
-    WLR = f'<h2 id=wlr > {test["Wins"]} / {test["Losses"]}</h2>'
+    title = f'<div  id=fighter1 >{test["FirstName"]} {test["LastName"]} ({test["Nickname"]}) </div>'
+    age1 = f'<div  id=age1> Age: {F1age} </div>'
+    reach1 = f'<div  id=reach1> Reach: {test["Reach"]} </div>'
+    weight1= f'<div id=weight1 > Weight Class: {test["WeightClass"]}</div>'
+    WLR = f'<div  id=wlr >Win Lost Ratio: {test["Wins"]} / {test["Losses"]}</div>'
+    title2 = f'<div id=fighter2 >{test2["FirstName"]} {test2["LastName"]} ({test2["Nickname"]}) </div>'
+    age2 = f'<div  id=age2> Age: {F2age} </div>'
+    reach2 = f'<div  id=reach2> Reach: {test2["Reach"]} </div>'
+    weight2= f'<div id=weight2 >Weight Class: {test2["WeightClass"]}</div>'
+    WLR2 = f'<div id=wlr2 >Win Lost Ratio: {test2["Wins"]} / {test2["Losses"]}</div>'
+    
+    
     
     print (title + weight1)
     Data = {
         # 'url': url,
         'title': title,
         'weight1': weight1,
-        "WLR":WLR
+        "WLR":WLR,
+        "age1":age1,
+        "reach1":reach1,
+
+
+
+        "title2" : title2,
+        'weight2': weight2,
+        'WLR2': WLR2 ,
+        "age2":age2,
+        "reach2":reach2,
+                
     }
 
     #return your json file
