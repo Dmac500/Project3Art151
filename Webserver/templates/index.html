@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="../static/style.css"> 
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>        
-<title>Home</title>
+<title>MATCH-MAKING</title>
 
 </head>
 <script>
@@ -26,8 +26,16 @@
                 dataType:"json",
                success: function(data){
                 $(fighter1).replaceWith(data.title)
+                $(age1).replaceWith(data.age1)
+                $(reach1).replaceWith(data.reach1)
                 $(weight1).replaceWith(data.weight1)
                 $(wlr).replaceWith(data.WLR)
+
+                $(fighter2).replaceWith(data.title2)
+                $(age2).replaceWith(data.age2)
+                $(reach2).replaceWith(data.reach2)
+                $(weight2).replaceWith(data.weight2)
+                $(wlr2).replaceWith(data.WLR2)
                   
                }
             });
@@ -36,13 +44,78 @@
   
   
     </script>
+    <style>
+        .body
+        {
+            background-color: rgb(36, 35, 35);
+        }
+        #title
+        {
+            font-size: 80px;
+            text-align: center;
+            color : rgba(218, 11, 11, 0.76);
+
+        }
+        .first
+        {
+            background-color: black;
+            width:50%;
+            float:left;
+        }
+        #fighter1 
+        {
+            text-align: center;
+            font-size: 50px;
+            color: red;
+        }
+        .info1
+        {
+         position:relative;
+         left:80px;
+         font-size: 22px;
+         
+        }
+        .info2
+        {
+         position:relative;
+         left:80px;
+         font-size: 22px;
+        }
+        #fighter2 
+        {
+            text-align: center;
+            font-size: 50px;
+            color: blue;
+        }
+        .second
+        {
+            background-color: black;
+            width:50%;
+            float: right;
+        }
+        
+    </style>
 
 <body>
-    
-    
-  <h1 id=fighter1>{{title}}</h1>
-  <h2 id=weight1>{{weight1}}</h2>
-  <h2 id=wlr>{{WRL}}</h2>
+    <div id=title>Match Making</div>
+    <div class= first>
+  <div id=fighter1>{{title}}</div>
+  <div class=info1>
+  <div id=age1>{{age1}}</div>
+  <div id=reach1>{{reach1}}</div>
+  <div id=weight1>{{weight1}}</div>
+  <div id=wlr>{{WRL}}</div>
+</div>
+</div>
+<div class= second>
+    <div id=fighter2> {{title2}} </div>
+    <div class=info2>
+    <div id=age2>{{age2}}</div>
+    <div id=reach2>{{reach2}}</div>
+    <div id=weight2>{{weight2}}</div>
+    <div id=wlr2>{{WLR2}}</div>
+    </div>
+  </div>
 
   
    
