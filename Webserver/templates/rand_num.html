@@ -1,15 +1,15 @@
 
-<style>
+<!-- <style>
  .grid 
   {
     display: grid; 
     grid-template-columns: auto auto;
   }
-</style>
-<div class = grid>
-<div id=rand_num>
+</style> -->
+<!-- <div class = grid> -->
+<h3 id=rand_num>
   Fighter: {{ fighter1['FirstName'] }} {{fighter1['LastName']}} ({{fighter1['Nickname']}})
-  <BR> <BR>
+  <!-- <BR> <BR>
   WeightClass: {{fighter1['WeightClass']}}
     <BR> <BR>
     Win / Loss: {{fighter1['wins']}} / {{fighter1['Losses']}}             
@@ -30,20 +30,21 @@
         TitleWins: {{fighter1['TitleWins']}}
         <BR> 
         TitleLosses:{{fighter1['TitleLosses']}}
+      <BR> <BR>  -->
+      <!-- win percentage: {{fighter1['winper']}} -->
       <BR> <BR> 
-      win percentage: {{fighter1['winper']}}
-      <BR> <BR> <BR> <BR>
-
+     {{fighter1['check']}}
      
-      </div>
+      <!-- </div> -->
+</h3>
     
-<div id=rand_num1>
+<!-- <h3 id=rand_num>
   Fighter: {{fighter2['FirstName1']}} {{fighter2['LastName1']}} ({{fighter2['Nickname1']}})
   <BR> <BR>
-    WeightClass: {{fighter2['WeightClass1']}}
-<BR> <BR>
-Win / Loss: {{fighter2['wins1']}} / {{fighter2['Losses1']}}
-<BR> <BR> 
+     WeightClass: {{fighter2['WeightClass1']}}
+  <BR> <BR>
+  Win / Loss: {{fighter2['wins1']}} / {{fighter2['Losses1']}}
+  <BR> <BR> 
   Reach: {{fighter2['Reach1']}}
   <BR> <BR> 
   StrikeAccuracy: {{fighter2['strkper1']}} 
@@ -56,10 +57,13 @@ Win / Loss: {{fighter2['wins1']}} / {{fighter2['Losses1']}}
   <BR> 
   Subs : {{fighter2['Submissions1']}}
   <BR> <BR> 
-    TitleWins: {{fighter2['TitleWins1']}}
-    <BR> 
-    TitleLosses:{{fighter2['TitleLosses1']}}
+  TitleWins: {{fighter2['TitleWins1']}}
+  <BR> 
+  TitleLosses:{{fighter2['TitleLosses1']}}
 <BR> <BR>
   win percentage: {{fighter2['winper1']}}
-</div>
-</div>
+  <BR> <BR>
+  {{fighter2['check']}}
+ </div>
+</div> 
+</h3> -->
