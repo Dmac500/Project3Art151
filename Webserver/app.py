@@ -81,20 +81,24 @@ def helloworld():
 
             
     test = Fighter[np.random.randint(0,high=len(Fighter)-1)]
+    test2 = Fighter[np.random.randint(0,high=len(Fighter)-1)]
+
     #random photo url could 
     # base_url = f'https://picsum.photos/{17}'
        
     #Since we are replacing an attribute all we need to do is get the new url as a string.
     # url = base_url
     #use full h2 tag since you're replacing the html object with a new one
-    title = f'<h1 id=fighter1 >{test["FirstName"]} {test["LastName"]}</h1>'
-    # Weight= f'<h2 id=Weight >{test["WeightClass"]}</h2>'
-
+    title = f'<h1 id=fighter1 >{test["FirstName"]} {test["LastName"]} ({test["Nickname"]}) </h1>'
+    weight1= f'<h2 id=weight1 >{test["WeightClass"]}</h2>'
+    WLR = f'<h2 id=wlr > {test["Wins"]} / {test["Losses"]}</h2>'
+    
+    print (title + weight1)
     Data = {
         # 'url': url,
         'title': title,
-        # 'Weight1': Weight
-
+        'weight1': weight1,
+        "WLR":WLR
     }
 
     #return your json file
@@ -108,15 +112,15 @@ def helloworld():
 
 def index():
     Hello = "Hello World!"
-    value = randint(0, 100)
+    # value = randint(0, 100)
     Weight = "is this working"    
-    url = f'https://picsum.photos/{value}'
+    # url = f'https://picsum.photos/{value}'
        
-    print(url)
+    # print(url)
     Data = {
         'title' : Hello,
         # 'img' : url
-        'Weight1': Weight
+       'weight1': Weight
     }
 
     return render_template('index.html', **Data)
