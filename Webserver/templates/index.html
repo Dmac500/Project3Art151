@@ -30,12 +30,14 @@
                 $(reach1).replaceWith(data.reach1)
                 $(weight1).replaceWith(data.weight1)
                 $(wlr).replaceWith(data.WLR)
+                $(odds).replaceWith(data.odds)
 
                 $(fighter2).replaceWith(data.title2)
                 $(age2).replaceWith(data.age2)
                 $(reach2).replaceWith(data.reach2)
                 $(weight2).replaceWith(data.weight2)
                 $(wlr2).replaceWith(data.WLR2)
+                $(odds2).replaceWith(data.odds2)
                   
                }
             });
@@ -72,14 +74,16 @@
         {
          position:relative;
          left:80px;
-         font-size: 22px;
+         color:white;
+        
          
         }
         .info2
         {
          position:relative;
          left:80px;
-         font-size: 22px;
+         color:white;
+        
         }
         #fighter2 
         {
@@ -105,15 +109,19 @@
   <div id=reach1>{{reach1}}</div>
   <div id=weight1>{{weight1}}</div>
   <div id=wlr>{{WRL}}</div>
+  <div id=odds>{{odds}}</div>
 </div>
 </div>
+
+
 <div class= second>
     <div id=fighter2> {{title2}} </div>
     <div class=info2>
     <div id=age2>{{age2}}</div>
     <div id=reach2>{{reach2}}</div>
     <div id=weight2>{{weight2}}</div>
-    <div id=wlr2>{{WLR2}}</div>
+    <div id= wlr2 > {{WLR2}} </div>
+    <div id=odds2>{{odds2}}</div>
     </div>
   </div>
 
