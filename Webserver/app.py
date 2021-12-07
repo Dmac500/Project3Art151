@@ -69,7 +69,9 @@ def getAge(x):
     today = date.today()
     age = today.year - int(bday[0]) - ((today.month, today.day) < (int(bday[1]), int(bday[2])))
     return age
-    
+
+def getWinRatio(win , loss):
+    return win/loss
     
 
 
@@ -83,56 +85,195 @@ def helloworld():
          for i in range(len(rec)): 
           if rec[i]["WeightClass"] == 'Featherweight':
             Fighter.append(rec[i])
+         test = Fighter[np.random.randint(0,high=len(Fighter)-1)]
+         test2 = Fighter[np.random.randint(0,high=len(Fighter)-1)]
+         F1age = getAge(test['BirthDate'])
+         F2age = getAge(test2['BirthDate'])
+         F1odds = ""
+         F2odds = ""
+         title = f'<div style =font-size:25px; id=fighter1  >{test["FirstName"]} {test["LastName"]} ({test["Nickname"]}) </div>'
+         age1 = f'<div  style =font-size:20px; id=age1> Age: {F1age} </div>'
+         reach1 = f'<div style =font-size:20px; id=reach1> Reach: {test["Reach"]} </div>'
+         weight1= f'<div style =font-size:20px; id=weight1 > Weight Class: {test["WeightClass"]}</div>'
+         WLR = f'<div   style =font-size:20px;  id=wlr >Win Lost Ratio: {test["Wins"]} / {test["Losses"]}</div>'
+         title2 = f'<div style =font-size:25px; id=fighter2 >{test2["FirstName"]} {test2["LastName"]} ({test2["Nickname"]}) </div>'
+         age2 = f'<div style =font-size:20px; id=age2> Age: {F2age} </div>'
+         reach2 = f'<div style =font-size:20px; id=reach2> Reach: {test2["Reach"]} </div>'
+         weight2= f'<div style =font-size:20px; id=weight2 >Weight Class: {test2["WeightClass"]}</div>'
+         WLR2 = f'<div style = font-size:20px; id=wlr2 >Win Lost Ratio: {test2["Wins"]} / {test2["Losses"]}</div>'
+
+         if test["Wins"] /test["Losses"] >test2["Wins"] / test2["Losses"]:
+             F1odds = "favoiate"
+             F2odds = "Underdog"
+         else:
+             F1odds = "Underdog"
+             F2odds = "Favoiate"
+         odds = f'<div style = font-size:20px; id=odds >bettingodd: {F1odds}</div>'
+         odds2 = f'<div style = font-size:20px; id=odds2 >bettingodds: {F2odds} </div>'
+
+
+        
+
     elif distance() < 30 and distance() > 15:
         Fighter.clear()
       
         for i in range(len(rec)):
             if rec[i]["WeightClass"] == 'Lightweight':
                 Fighter.append(rec[i])
+        test = Fighter[np.random.randint(0,high=len(Fighter)-1)]
+        test2 = Fighter[np.random.randint(0,high=len(Fighter)-1)]
+        F1age = getAge(test['BirthDate'])
+        F2age = getAge(test2['BirthDate'])
+        title = f'<div style =font-size:30px; id=fighter1  >{test["FirstName"]} {test["LastName"]} ({test["Nickname"]}) </div>'
+        age1 = f'<div  style =font-size:25px; id=age1> Age: {F1age} </div>'
+        reach1 = f'<div style =font-size:25px; id=reach1> Reach: {test["Reach"]} </div>'
+        weight1= f'<div style =font-size:25px; id=weight1 > Weight Class: {test["WeightClass"]}</div>'
+        WLR = f'<div   style =font-size:25px;  id=wlr >Win Lost Ratio: {test["Wins"]} / {test["Losses"]}</div>'
+        title2 = f'<div style =font-size:30px; id=fighter2 >{test2["FirstName"]} {test2["LastName"]} ({test2["Nickname"]}) </div>'
+        age2 = f'<div style =font-size:25px; id=age2> Age: {F2age} </div>'
+        reach2 = f'<div style =font-size:25px; id=reach2> Reach: {test2["Reach"]} </div>'
+        weight2= f'<div style =font-size:25px; id=weight2 >Weight Class: {test2["WeightClass"]}</div>'
+        WLR2 = f'<div style = font-size:25px; id=wlr2 >Win Lost Ratio: {test2["Wins"]} / {test2["Losses"]}</div>'
+        if test["Wins"] /test["Losses"] >test2["Wins"] / test2["Losses"]:
+             F1odds = "favoiate"
+             F2odds = "Underdog"
+        else:
+             F1odds = "Underdog"
+             F2odds = "Favoiate"
+        odds = f'<div style = font-size:25px; id=odds >bettingodd: {F1odds}</div>'
+        odds2 = f'<div style = font-size:25px; id=odds2 >bettingodds: {F2odds} </div>'
     elif distance() > 30 and distance() < 45:
         Fighter.clear()
 
         for i in range(len(rec)):
          if rec[i]["WeightClass"] == 'Welterweight':
             Fighter.append(rec[i])
+        test = Fighter[np.random.randint(0,high=len(Fighter)-1)]
+        test2 = Fighter[np.random.randint(0,high=len(Fighter)-1)]
+        F1age = getAge(test['BirthDate'])
+        F2age = getAge(test2['BirthDate'])
+        title = f'<div style =font-size:35px; id=fighter1  >{test["FirstName"]} {test["LastName"]} ({test["Nickname"]}) </div>'
+        age1 = f'<div  style =font-size:30px; id=age1> Age: {F1age} </div>'
+        reach1 = f'<div style =font-size:30px; id=reach1> Reach: {test["Reach"]} </div>'
+        weight1= f'<div style =font-size:30px; id=weight1 > Weight Class: {test["WeightClass"]}</div>'
+        WLR = f'<div   style =font-size:30px;  id=wlr >Win Lost Ratio: {test["Wins"]} / {test["Losses"]}</div>'
+        title2 = f'<div style =font-size:35px; id=fighter2 >{test2["FirstName"]} {test2["LastName"]} ({test2["Nickname"]}) </div>'
+        age2 = f'<div style =font-size:30px; id=age2> Age: {F2age} </div>'
+        reach2 = f'<div style =font-size:30px; id=reach2> Reach: {test2["Reach"]} </div>'
+        weight2= f'<div style =font-size:30px; id=weight2 >Weight Class: {test2["WeightClass"]}</div>'
+        WLR2 = f'<div style = font-size:30px; id=wlr2 >Win Lost Ratio: {test2["Wins"]} / {test2["Losses"]}</div>'
+        if test["Wins"] /test["Losses"] >test2["Wins"] / test2["Losses"]:
+             F1odds = "favoiate"
+             F2odds = "Underdog"
+        else:
+             F1odds = "Underdog"
+             F2odds = "Favoiate"
+        odds = f'<div style = font-size:30px; id=odds >bettingodd: {F1odds}</div>'
+        odds2 = f'<div style = font-size:30px; id=odds2 >bettingodds: {F2odds} </div>'
     elif distance() > 45 and distance() < 60:
         Fighter.clear()
         for i in range(len(rec)):
          if rec[i]["WeightClass"] == 'Middleweight':
             Fighter.append(rec[i])
+        test = Fighter[np.random.randint(0,high=len(Fighter)-1)]
+        test2 = Fighter[np.random.randint(0,high=len(Fighter)-1)]
+        F1age = getAge(test['BirthDate'])
+        F2age = getAge(test2['BirthDate'])
+        title = f'<div style =font-size:40px; id=fighter1  >{test["FirstName"]} {test["LastName"]} ({test["Nickname"]}) </div>'
+        age1 = f'<div  style =font-size:35px; id=age1> Age: {F1age} </div>'
+        reach1 = f'<div style =font-size:35px; id=reach1> Reach: {test["Reach"]} </div>'
+        weight1= f'<div style =font-size:35px; id=weight1 > Weight Class: {test["WeightClass"]}</div>'
+        WLR = f'<div   style =font-size:35px;  id=wlr >Win Lost Ratio: {test["Wins"]} / {test["Losses"]}</div>'
+        title2 = f'<div style =font-size:40px; id=fighter2 >{test2["FirstName"]} {test2["LastName"]} ({test2["Nickname"]}) </div>'
+        age2 = f'<div style =font-size:35px; id=age2> Age: {F2age} </div>'
+        reach2 = f'<div style =font-size:35px; id=reach2> Reach: {test2["Reach"]} </div>'
+        weight2= f'<div style =font-size:35px; id=weight2 >Weight Class: {test2["WeightClass"]}</div>'
+        WLR2 = f'<div style = font-size:35px; id=wlr2 >Win Lost Ratio: {test2["Wins"]} / {test2["Losses"]}</div>'
+        if test["Wins"] /test["Losses"] >test2["Wins"] / test2["Losses"]:
+             F1odds = "favoiate"
+             F2odds = "Underdog"
+        else:
+             F1odds = "Underdog"
+             F2odds = "Favoiate"
+        odds = f'<div style = font-size:35px; id=odds >bettingodd: {F1odds}</div>'
+        odds2 = f'<div style = font-size:35px; id=odds2 >bettingodds: {F2odds} </div>'
     elif distance() > 75 and distance() < 90:
         Fighter.clear()
         for i in range(len(rec)):
          if rec[i]["WeightClass"] == 'Heavyweight':
             Fighter.append(rec[i])
+        test = Fighter[np.random.randint(0,high=len(Fighter)-1)]
+        test2 = Fighter[np.random.randint(0,high=len(Fighter)-1)]
+        F1age = getAge(test['BirthDate'])
+        F2age = getAge(test2['BirthDate'])
+        title = f'<div style =font-size:45px; id=fighter1  >{test["FirstName"]} {test["LastName"]} ({test["Nickname"]}) </div>'
+        age1 = f'<div  style =font-size:40px; id=age1> Age: {F1age} </div>'
+        reach1 = f'<div style =font-size:40px; id=reach1> Reach: {test["Reach"]} </div>'
+        weight1= f'<div style =font-size:40px; id=weight1 > Weight Class: {test["WeightClass"]}</div>'
+        WLR = f'<div   style =font-size:40px;  id=wlr >Win Lost Ratio: {test["Wins"]} / {test["Losses"]}</div>'
+        title2 = f'<div style =font-size:45px; id=fighter2 >{test2["FirstName"]} {test2["LastName"]} ({test2["Nickname"]}) </div>'
+        age2 = f'<div style =font-size:45px; id=age2> Age: {F2age} </div>'
+        reach2 = f'<div style =font-size:40px; id=reach2> Reach: {test2["Reach"]} </div>'
+        weight2= f'<div style =font-size:40px; id=weight2 >Weight Class: {test2["WeightClass"]}</div>'
+        WLR2 = f'<div style = font-size:40px; id=wlr2 >Win Lost Ratio: {test2["Wins"]} / {test2["Losses"]}</div>'
+        if test["Wins"] /test["Losses"] >test2["Wins"] / test2["Losses"]:
+             F1odds = "favoiate"
+             F2odds = "Underdog"
+        else:
+             F1odds = "Underdog"
+             F2odds = "Favoiate"
+        odds = f'<div style = font-size:40px; id=odds >bettingodd: {F1odds}</div>'
+        odds2 = f'<div style = font-size:40px; id=odds2 >bettingodds: {F2odds} </div>'
     else:
         Fighter.clear()
         
         for i in range(len(rec)): 
           if rec[i]["WeightClass"] == 'Bantamweight':
             Fighter.append(rec[i])
+        test = Fighter[np.random.randint(0,high=len(Fighter)-1)]
+        test2 = Fighter[np.random.randint(0,high=len(Fighter)-1)]
+        F1age = getAge(test['BirthDate'])
+        F2age = getAge(test2['BirthDate'])
+        title = f'<div style =font-size:20px; id=fighter1  >{test["FirstName"]} {test["LastName"]} ({test["Nickname"]}) </div>'
+        age1 = f'<div  style =font-size:15px; id=age1> Age: {F1age} </div>'
+        reach1 = f'<div style =font-size:15px; id=reach1> Reach: {test["Reach"]} </div>'
+        weight1= f'<div style =font-size:15px; id=weight1 > Weight Class: {test["WeightClass"]}</div>'
+        WLR = f'<div   style =font-size:15px;  id=wlr >Win Lost Ratio: {test["Wins"]} / {test["Losses"]}</div>'
+        title2 = f'<div style =font-size:20px; id=fighter2 >{test2["FirstName"]} {test2["LastName"]} ({test2["Nickname"]}) </div>'
+        age2 = f'<div style =font-size:15px; id=age2> Age: {F2age} </div>'
+        reach2 = f'<div style =font-size:15px; id=reach2> Reach: {test2["Reach"]} </div>'
+        weight2= f'<div style =font-size:15px; id=weight2 >Weight Class: {test2["WeightClass"]}</div>'
+        WLR2 = f'<div style = font-size:15px;  id=wlr2 >Win Lost Ratio: {test2["Wins"]} / {test2["Losses"]}</div>'
+        if test["Wins"] /test["Losses"] >test2["Wins"] / test2["Losses"]:
+             F1odds = "Favoiate"
+             F2odds = "Underdog"
+        else:
+             F1odds = "Underdog"
+             F2odds = "Favoiate"
+        odds = f'<div style = font-size:15px; id=odds >bettingodd: {F1odds}</div>'
+        odds2 = f'<div style = font-size:15px; id=odds2 >bettingodds: {F2odds} </div>'
 
             
-    test = Fighter[np.random.randint(0,high=len(Fighter)-1)]
-    test2 = Fighter[np.random.randint(0,high=len(Fighter)-1)]
-    F1age = getAge(test['BirthDate'])
-    F2age = getAge(test2['BirthDate'])
+    # test = Fighter[np.random.randint(0,high=len(Fighter)-1)]
+    # test2 = Fighter[np.random.randint(0,high=len(Fighter)-1)]
+    # F1age = getAge(test['BirthDate'])
+    # F2age = getAge(test2['BirthDate'])
     #random photo url could 
     # base_url = f'https://picsum.photos/{17}'
        
     #Since we are replacing an attribute all we need to do is get the new url as a string.
     # url = base_url
     #use full h2 tag since you're replacing the html object with a new one
-    title = f'<div  id=fighter1 >{test["FirstName"]} {test["LastName"]} ({test["Nickname"]}) </div>'
-    age1 = f'<div  id=age1> Age: {F1age} </div>'
-    reach1 = f'<div  id=reach1> Reach: {test["Reach"]} </div>'
-    weight1= f'<div id=weight1 > Weight Class: {test["WeightClass"]}</div>'
-    WLR = f'<div  id=wlr >Win Lost Ratio: {test["Wins"]} / {test["Losses"]}</div>'
-    title2 = f'<div id=fighter2 >{test2["FirstName"]} {test2["LastName"]} ({test2["Nickname"]}) </div>'
-    age2 = f'<div  id=age2> Age: {F2age} </div>'
-    reach2 = f'<div  id=reach2> Reach: {test2["Reach"]} </div>'
-    weight2= f'<div id=weight2 >Weight Class: {test2["WeightClass"]}</div>'
-    WLR2 = f'<div id=wlr2 >Win Lost Ratio: {test2["Wins"]} / {test2["Losses"]}</div>'
+    # title = f'<div  id=fighter1 >{test["FirstName"]} {test["LastName"]} ({test["Nickname"]}) </div>'
+    # age1 = f'<div  id=age1> Age: {F1age} </div>'
+    # reach1 = f'<div  id=reach1> Reach: {test["Reach"]} </div>'
+    # weight1= f'<div id=weight1 > Weight Class: {test["WeightClass"]}</div>'
+    # WLR = f'<div  id=wlr >Win Lost Ratio: {test["Wins"]} / {test["Losses"]}</div>'
+    # title2 = f'<div id=fighter2 >{test2["FirstName"]} {test2["LastName"]} ({test2["Nickname"]}) </div>'
+    # age2 = f'<div  id=age2> Age: {F2age} </div>'
+    # reach2 = f'<div  id=reach2> Reach: {test2["Reach"]} </div>'
+    # weight2= f'<div id=weight2 >Weight Class: {test2["WeightClass"]}</div>'
+    # WLR2 = f'<div id=wlr2 >Win Lost Ratio: {test2["Wins"]} / {test2["Losses"]}</div>'
     
     
     
@@ -144,14 +285,16 @@ def helloworld():
         "WLR":WLR,
         "age1":age1,
         "reach1":reach1,
+        "odds":odds,
 
 
 
         "title2" : title2,
         'weight2': weight2,
-        'WLR2': WLR2 ,
+        'WLR2': WLR2,
         "age2":age2,
         "reach2":reach2,
+        "odds2":odds2
                 
     }
 
