@@ -103,11 +103,11 @@ def helloworld():
          WLR2 = f'<div style = font-size:20px; id=wlr2 >Win Lost Ratio: {test2["Wins"]} / {test2["Losses"]}</div>'
 
          if test["Wins"] /test["Losses"] >test2["Wins"] / test2["Losses"]:
-             F1odds = "favoiate"
+             F1odds = "favorite"
              F2odds = "Underdog"
          else:
              F1odds = "Underdog"
-             F2odds = "Favoiate"
+             F2odds = "favorite"
          odds = f'<div style = font-size:20px; id=odds >bettingodd: {F1odds}</div>'
          odds2 = f'<div style = font-size:20px; id=odds2 >bettingodds: {F2odds} </div>'
 
@@ -135,11 +135,11 @@ def helloworld():
         weight2= f'<div style =font-size:25px; id=weight2 >Weight Class: {test2["WeightClass"]}</div>'
         WLR2 = f'<div style = font-size:25px; id=wlr2 >Win Lost Ratio: {test2["Wins"]} / {test2["Losses"]}</div>'
         if test["Wins"] /test["Losses"] >test2["Wins"] / test2["Losses"]:
-             F1odds = "favoiate"
+             F1odds = "favorite"
              F2odds = "Underdog"
         else:
              F1odds = "Underdog"
-             F2odds = "Favoiate"
+             F2odds = "favorite"
         odds = f'<div style = font-size:25px; id=odds >bettingodd: {F1odds}</div>'
         odds2 = f'<div style = font-size:25px; id=odds2 >bettingodds: {F2odds} </div>'
     elif distance() > 30 and distance() < 45:
@@ -163,11 +163,11 @@ def helloworld():
         weight2= f'<div style =font-size:30px; id=weight2 >Weight Class: {test2["WeightClass"]}</div>'
         WLR2 = f'<div style = font-size:30px; id=wlr2 >Win Lost Ratio: {test2["Wins"]} / {test2["Losses"]}</div>'
         if test["Wins"] /test["Losses"] >test2["Wins"] / test2["Losses"]:
-             F1odds = "favoiate"
+             F1odds = "favorite"
              F2odds = "Underdog"
         else:
              F1odds = "Underdog"
-             F2odds = "Favoiate"
+             F2odds = "favorite"
         odds = f'<div style = font-size:30px; id=odds >bettingodd: {F1odds}</div>'
         odds2 = f'<div style = font-size:30px; id=odds2 >bettingodds: {F2odds} </div>'
     elif distance() > 45 and distance() < 60:
@@ -190,11 +190,11 @@ def helloworld():
         weight2= f'<div style =font-size:35px; id=weight2 >Weight Class: {test2["WeightClass"]}</div>'
         WLR2 = f'<div style = font-size:35px; id=wlr2 >Win Lost Ratio: {test2["Wins"]} / {test2["Losses"]}</div>'
         if test["Wins"] /test["Losses"] >test2["Wins"] / test2["Losses"]:
-             F1odds = "favoiate"
+             F1odds = "favorite"
              F2odds = "Underdog"
         else:
              F1odds = "Underdog"
-             F2odds = "Favoiate"
+             F2odds = "favorite"
         odds = f'<div style = font-size:35px; id=odds >bettingodd: {F1odds}</div>'
         odds2 = f'<div style = font-size:35px; id=odds2 >bettingodds: {F2odds} </div>'
     elif distance() > 75 and distance() < 90:
@@ -217,11 +217,11 @@ def helloworld():
         weight2= f'<div style =font-size:40px; id=weight2 >Weight Class: {test2["WeightClass"]}</div>'
         WLR2 = f'<div style = font-size:40px; id=wlr2 >Win Lost Ratio: {test2["Wins"]} / {test2["Losses"]}</div>'
         if test["Wins"] /test["Losses"] >test2["Wins"] / test2["Losses"]:
-             F1odds = "favoiate"
+             F1odds = "favorite"
              F2odds = "Underdog"
         else:
              F1odds = "Underdog"
-             F2odds = "Favoiate"
+             F2odds = "favorite"
         odds = f'<div style = font-size:40px; id=odds >bettingodd: {F1odds}</div>'
         odds2 = f'<div style = font-size:40px; id=odds2 >bettingodds: {F2odds} </div>'
     else:
@@ -245,11 +245,11 @@ def helloworld():
         weight2= f'<div style =font-size:15px; id=weight2 >Weight Class: {test2["WeightClass"]}</div>'
         WLR2 = f'<div style = font-size:15px;  id=wlr2 >Win Lost Ratio: {test2["Wins"]} / {test2["Losses"]}</div>'
         if test["Wins"] /test["Losses"] >test2["Wins"] / test2["Losses"]:
-             F1odds = "Favoiate"
+             F1odds = "favorite"
              F2odds = "Underdog"
         else:
              F1odds = "Underdog"
-             F2odds = "Favoiate"
+             F2odds = "favorite"
         odds = f'<div style = font-size:15px; id=odds >bettingodd: {F1odds}</div>'
         odds2 = f'<div style = font-size:15px; id=odds2 >bettingodds: {F2odds} </div>'
 
